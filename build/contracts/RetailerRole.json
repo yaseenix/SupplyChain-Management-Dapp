@@ -1,0 +1,2717 @@
+{
+  "contractName": "RetailerRole",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "RetailerAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "RetailerRemoved",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isRetailer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "addRetailer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceRetailer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"RetailerAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"RetailerRemoved\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"addRetailer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isRetailer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceRetailer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/yaseen/Desktop/SupplyChainTracking-Dapp/contracts/coffeeaccesscontrol/RetailerRole.sol\":\"RetailerRole\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/yaseen/Desktop/SupplyChainTracking-Dapp/contracts/coffeeaccesscontrol/RetailerRole.sol\":{\"keccak256\":\"0x7ceed3953bbcaf05b377b3d40ccd8e2cb76ec8a5a27dd94e46638f17250ad33e\",\"urls\":[\"bzz-raw://40543d36a0bae4601fd583482311b578aced6d7b965513ec1900ce34695a76c6\",\"dweb:/ipfs/QmaQ1eJFGxz8pjZxa7fbkdYc4xtdJA4e4Sv8MLGoJRhjkL\"]},\"/home/yaseen/Desktop/SupplyChainTracking-Dapp/contracts/coffeeaccesscontrol/Roles.sol\":{\"keccak256\":\"0xd1345971ee928937694ab7d5e01025b7273020665bfe1502f744dc0930c28623\",\"urls\":[\"bzz-raw://4280eb35d6b49788c12d46a3015df563dffe8b9c543279e04d70a5a5a886e2a3\",\"dweb:/ipfs/QmfPmHuxo83eVfR1ePbiHkNXzzpWn2hXmWc3XMoEj4xHGN\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506100203361002560201b60201c565b6101c7565b61003d81600061008360201b6102c81790919060201c565b8073ffffffffffffffffffffffffffffffffffffffff167f71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa60405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156100bd57600080fd5b6100cd828261013560201b60201c565b156100d757600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141561017057600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b610476806101d66000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80635da09b88146100465780638ec4f505146100a2578063db0e6a2f146100e6575b600080fd5b6100886004803603602081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506100f0565b604051808215151515815260200191505060405180910390f35b6100e4600480360360208110156100b857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061010d565b005b6100ee610177565b005b600061010682600061018290919063ffffffff16565b9050919050565b610116336100f0565b61016b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001806104206022913960400191505060405180910390fd5b61017481610214565b50565b6101803361026e565b565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614156101bd57600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b6102288160006102c890919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa60405160405180910390a250565b61028281600061037490919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db60405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561030257600080fd5b61030c8282610182565b1561031657600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103ae57600080fd5b6103b88282610182565b6103c157600080fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550505056fe596f75206d75737420626520612072657461696c657220746f20646f20746869732ea265627a7a72315820a253ef7fdb06c63453f92c9edcfa8949cbdd8e75bb47cd77f90d274086d844f564736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80635da09b88146100465780638ec4f505146100a2578063db0e6a2f146100e6575b600080fd5b6100886004803603602081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506100f0565b604051808215151515815260200191505060405180910390f35b6100e4600480360360208110156100b857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061010d565b005b6100ee610177565b005b600061010682600061018290919063ffffffff16565b9050919050565b610116336100f0565b61016b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260228152602001806104206022913960400191505060405180910390fd5b61017481610214565b50565b6101803361026e565b565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1614156101bd57600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b6102288160006102c890919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f71ae26cad02663e3d92efd6ec56031a80d74a20c0ab4183faa8bf262261c9baa60405160405180910390a250565b61028281600061037490919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fdb7176e79cffef81cb01767dd0447a0b24bb72ca9778d4b245581086b2a7e6db60405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561030257600080fd5b61030c8282610182565b1561031657600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103ae57600080fd5b6103b88282610182565b6103c157600080fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550505056fe596f75206d75737420626520612072657461696c657220746f20646f20746869732ea265627a7a72315820a253ef7fdb06c63453f92c9edcfa8949cbdd8e75bb47cd77f90d274086d844f564736f6c63430005100032",
+  "sourceMap": "190:1555:4:-;;;603:56;8:9:-1;5:2;;;30:1;27;20:12;5:2;603:56:4;630:24;643:10;630:12;;;:24;;:::i;:::-;190:1555;;1404:114;1458:22;1472:7;1458:9;:13;;;;;;:22;;;;:::i;:::-;1505:7;1491:22;;;;;;;;;;;;1404:114;:::o;278:167:5:-;369:1;350:21;;:7;:21;;;;342:30;;;;;;387:18;391:4;397:7;387:3;;;:18;;:::i;:::-;386:19;378:28;;;;;;436:4;413;:11;;:20;425:7;413:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;278:167;;:::o;759:166::-;843:4;884:1;865:21;;:7;:21;;;;857:30;;;;;;900:4;:11;;:20;912:7;900:20;;;;;;;;;;;;;;;;;;;;;;;;;893:27;;759:166;;;;:::o;190:1555:4:-;;;;;;;",
+  "deployedSourceMap": "190:1555:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;190:1555:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;914:104;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;914:104:4;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1079:90;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1079:90:4;;;;;;;;;;;;;;;;;;;:::i;:::-;;1237:73;;;:::i;:::-;;914:104;972:4;991:22;1005:7;991:9;:13;;:22;;;;:::i;:::-;984:29;;914:104;;;:::o;1079:90::-;782:22;793:10;782;:22::i;:::-;774:69;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1143:21;1156:7;1143:12;:21::i;:::-;1079:90;:::o;1237:73::-;1278:27;1294:10;1278:15;:27::i;:::-;1237:73::o;759:166:5:-;843:4;884:1;865:21;;:7;:21;;;;857:30;;;;;;900:4;:11;;:20;912:7;900:20;;;;;;;;;;;;;;;;;;;;;;;;;893:27;;759:166;;;;:::o;1404:114:4:-;1458:22;1472:7;1458:9;:13;;:22;;;;:::i;:::-;1505:7;1491:22;;;;;;;;;;;;1404:114;:::o;1621:122::-;1678:25;1695:7;1678:9;:16;;:25;;;;:::i;:::-;1730:7;1714:24;;;;;;;;;;;;1621:122;:::o;278:167:5:-;369:1;350:21;;:7;:21;;;;342:30;;;;;;387:18;391:4;397:7;387:3;:18::i;:::-;386:19;378:28;;;;;;436:4;413;:11;;:20;425:7;413:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;278:167;;:::o;511:170::-;605:1;586:21;;:7;:21;;;;578:30;;;;;;622:18;626:4;632:7;622:3;:18::i;:::-;614:27;;;;;;671:5;648:4;:11;;:20;660:7;648:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;511:170;;:::o",
+  "source": "//\"SPDX-License-Identifier: MIT\"\npragma solidity >=0.4.24;\n\n// Import the library 'Roles'\nimport \"./Roles.sol\";\n\n// Define a contract 'RetailerRole' to manage this role - add, remove, check\ncontract RetailerRole {\n  using Roles for Roles.Role;\n  // Define 2 events, one for Adding, and other for Removing\n  event RetailerAdded(address indexed account);\n  event RetailerRemoved(address indexed account);\n  // Define a struct 'retailers' by inheriting from 'Roles' library, struct Role\n  Roles.Role private retailers;\n  // In the constructor make the address that deploys this contract the 1st retailer\n  constructor() public {\n    _addRetailer(msg.sender);\n  }\n\n  // Define a modifier that checks to see if msg.sender has the appropriate role\n  modifier onlyRetailer() {\n    require(isRetailer(msg.sender), \"You must be a retailer to do this.\");\n    _;\n  }\n\n  // Define a function 'isRetailer' to check this role\n  function isRetailer(address account) public view returns (bool) {\n    return retailers.has(account);\n  }\n\n  // Define a function 'addRetailer' that adds this role\n  function addRetailer(address account) public onlyRetailer {\n    _addRetailer(account);\n  }\n\n  // Define a function 'renounceRetailer' to renounce this role\n  function renounceRetailer() public {\n    _removeRetailer(msg.sender);\n  }\n\n  // Define an internal function '_addRetailer' to add this role, called by 'addRetailer'\n  function _addRetailer(address account) internal {\n    retailers.add(account);\n    emit RetailerAdded(account);\n  }\n\n  // Define an internal function '_removeRetailer' to remove this role, called by 'removeRetailer'\n  function _removeRetailer(address account) internal {\n    retailers.remove(account);\n    emit RetailerRemoved(account);\n  }\n}",
+  "sourcePath": "/home/yaseen/Desktop/SupplyChainTracking-Dapp/contracts/coffeeaccesscontrol/RetailerRole.sol",
+  "ast": {
+    "absolutePath": "/home/yaseen/Desktop/SupplyChainTracking-Dapp/contracts/coffeeaccesscontrol/RetailerRole.sol",
+    "exportedSymbols": {
+      "RetailerRole": [
+        464
+      ]
+    },
+    "id": 465,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 362,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:25:4"
+      },
+      {
+        "absolutePath": "/home/yaseen/Desktop/SupplyChainTracking-Dapp/contracts/coffeeaccesscontrol/Roles.sol",
+        "file": "./Roles.sol",
+        "id": 363,
+        "nodeType": "ImportDirective",
+        "scope": 465,
+        "sourceUnit": 559,
+        "src": "90:21:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 464,
+        "linearizedBaseContracts": [
+          464
+        ],
+        "name": "RetailerRole",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 366,
+            "libraryName": {
+              "contractScope": null,
+              "id": 364,
+              "name": "Roles",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 558,
+              "src": "222:5:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Roles_$558",
+                "typeString": "library Roles"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "216:27:4",
+            "typeName": {
+              "contractScope": null,
+              "id": 365,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 471,
+              "src": "232:10:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$471_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            }
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 370,
+            "name": "RetailerAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 369,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 368,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 370,
+                  "src": "327:23:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 367,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "327:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "326:25:4"
+            },
+            "src": "307:45:4"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 374,
+            "name": "RetailerRemoved",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 373,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 372,
+                  "indexed": true,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 374,
+                  "src": "377:23:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 371,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "377:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "376:25:4"
+            },
+            "src": "355:47:4"
+          },
+          {
+            "constant": false,
+            "id": 376,
+            "name": "retailers",
+            "nodeType": "VariableDeclaration",
+            "scope": 464,
+            "src": "486:28:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Role_$471_storage",
+              "typeString": "struct Roles.Role"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 375,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 471,
+              "src": "486:10:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$471_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 384,
+              "nodeType": "Block",
+              "src": "624:35:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 380,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1583,
+                          "src": "643:3:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 381,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "643:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 379,
+                      "name": "_addRetailer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 447,
+                      "src": "630:12:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 382,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "630:24:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 383,
+                  "nodeType": "ExpressionStatement",
+                  "src": "630:24:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 385,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 377,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "614:2:4"
+            },
+            "returnParameters": {
+              "id": 378,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "624:0:4"
+            },
+            "scope": 464,
+            "src": "603:56:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 396,
+              "nodeType": "Block",
+              "src": "768:87:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 389,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1583,
+                              "src": "793:3:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 390,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "793:10:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "id": 388,
+                          "name": "isRetailer",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 410,
+                          "src": "782:10:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view returns (bool)"
+                          }
+                        },
+                        "id": 391,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "782:22:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "596f75206d75737420626520612072657461696c657220746f20646f20746869732e",
+                        "id": 392,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "806:36:4",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_61da31c1e3b4b07c2c8b368d5e3e7e8f854294f16474a71669f79bb5ecdf2ce4",
+                          "typeString": "literal_string \"You must be a retailer to do this.\""
+                        },
+                        "value": "You must be a retailer to do this."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_61da31c1e3b4b07c2c8b368d5e3e7e8f854294f16474a71669f79bb5ecdf2ce4",
+                          "typeString": "literal_string \"You must be a retailer to do this.\""
+                        }
+                      ],
+                      "id": 387,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        1586,
+                        1587
+                      ],
+                      "referencedDeclaration": 1587,
+                      "src": "774:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 393,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "774:69:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 394,
+                  "nodeType": "ExpressionStatement",
+                  "src": "774:69:4"
+                },
+                {
+                  "id": 395,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "849:1:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 397,
+            "name": "onlyRetailer",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 386,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "765:2:4"
+            },
+            "src": "744:111:4",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 409,
+              "nodeType": "Block",
+              "src": "978:40:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 406,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 399,
+                        "src": "1005:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 404,
+                        "name": "retailers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 376,
+                        "src": "991:9:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$471_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 405,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "has",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 557,
+                      "src": "991:13:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$471_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$471_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
+                      }
+                    },
+                    "id": 407,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "991:22:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 403,
+                  "id": 408,
+                  "nodeType": "Return",
+                  "src": "984:29:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 410,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isRetailer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 400,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 399,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 410,
+                  "src": "934:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 398,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "934:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "933:17:4"
+            },
+            "returnParameters": {
+              "id": 403,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 402,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 410,
+                  "src": "972:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 401,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "972:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "971:6:4"
+            },
+            "scope": 464,
+            "src": "914:104:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 421,
+              "nodeType": "Block",
+              "src": "1137:32:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 418,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 412,
+                        "src": "1156:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 417,
+                      "name": "_addRetailer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 447,
+                      "src": "1143:12:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 419,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1143:21:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 420,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1143:21:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 422,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 415,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 414,
+                  "name": "onlyRetailer",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 397,
+                  "src": "1124:12:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1124:12:4"
+              }
+            ],
+            "name": "addRetailer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 413,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 412,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 422,
+                  "src": "1100:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 411,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1100:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1099:17:4"
+            },
+            "returnParameters": {
+              "id": 416,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1137:0:4"
+            },
+            "scope": 464,
+            "src": "1079:90:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 430,
+              "nodeType": "Block",
+              "src": "1272:38:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 426,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1583,
+                          "src": "1294:3:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 427,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1294:10:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 425,
+                      "name": "_removeRetailer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 463,
+                      "src": "1278:15:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 428,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1278:27:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 429,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1278:27:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 431,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "renounceRetailer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 423,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1262:2:4"
+            },
+            "returnParameters": {
+              "id": 424,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1272:0:4"
+            },
+            "scope": 464,
+            "src": "1237:73:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 446,
+              "nodeType": "Block",
+              "src": "1452:66:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 439,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 433,
+                        "src": "1472:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 436,
+                        "name": "retailers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 376,
+                        "src": "1458:9:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$471_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 438,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "add",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 503,
+                      "src": "1458:13:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$471_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$471_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 440,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1458:22:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 441,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1458:22:4"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 443,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 433,
+                        "src": "1505:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 442,
+                      "name": "RetailerAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 370,
+                      "src": "1491:13:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 444,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1491:22:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 445,
+                  "nodeType": "EmitStatement",
+                  "src": "1486:27:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 447,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_addRetailer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 434,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 433,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 447,
+                  "src": "1426:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 432,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1426:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1425:17:4"
+            },
+            "returnParameters": {
+              "id": 435,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1452:0:4"
+            },
+            "scope": 464,
+            "src": "1404:114:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 462,
+              "nodeType": "Block",
+              "src": "1672:71:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 455,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 449,
+                        "src": "1695:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 452,
+                        "name": "retailers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 376,
+                        "src": "1678:9:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$471_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 454,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "remove",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 534,
+                      "src": "1678:16:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Role_$471_storage_ptr_$_t_address_$returns$__$bound_to$_t_struct$_Role_$471_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address)"
+                      }
+                    },
+                    "id": 456,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1678:25:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 457,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1678:25:4"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 459,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 449,
+                        "src": "1730:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 458,
+                      "name": "RetailerRemoved",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 374,
+                      "src": "1714:15:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 460,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1714:24:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 461,
+                  "nodeType": "EmitStatement",
+                  "src": "1709:29:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 463,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_removeRetailer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 450,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 449,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 463,
+                  "src": "1646:15:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 448,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1646:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1645:17:4"
+            },
+            "returnParameters": {
+              "id": 451,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1672:0:4"
+            },
+            "scope": 464,
+            "src": "1621:122:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 465,
+        "src": "190:1555:4"
+      }
+    ],
+    "src": "33:1712:4"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/home/yaseen/Desktop/SupplyChainTracking-Dapp/contracts/coffeeaccesscontrol/RetailerRole.sol",
+      "exportedSymbols": {
+        "RetailerRole": [
+          464
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".24"
+          ]
+        },
+        "id": 362,
+        "name": "PragmaDirective",
+        "src": "33:25:4"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 559,
+          "absolutePath": "/home/yaseen/Desktop/SupplyChainTracking-Dapp/contracts/coffeeaccesscontrol/Roles.sol",
+          "file": "./Roles.sol",
+          "scope": 465,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 363,
+        "name": "ImportDirective",
+        "src": "90:21:4"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            464
+          ],
+          "name": "RetailerRole",
+          "scope": 465
+        },
+        "children": [
+          {
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Roles",
+                  "referencedDeclaration": 558,
+                  "type": "library Roles"
+                },
+                "id": 364,
+                "name": "UserDefinedTypeName",
+                "src": "222:5:4"
+              },
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Roles.Role",
+                  "referencedDeclaration": 471,
+                  "type": "struct Roles.Role"
+                },
+                "id": 365,
+                "name": "UserDefinedTypeName",
+                "src": "232:10:4"
+              }
+            ],
+            "id": 366,
+            "name": "UsingForDirective",
+            "src": "216:27:4"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "RetailerAdded"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "account",
+                      "scope": 370,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 367,
+                        "name": "ElementaryTypeName",
+                        "src": "327:7:4"
+                      }
+                    ],
+                    "id": 368,
+                    "name": "VariableDeclaration",
+                    "src": "327:23:4"
+                  }
+                ],
+                "id": 369,
+                "name": "ParameterList",
+                "src": "326:25:4"
+              }
+            ],
+            "id": 370,
+            "name": "EventDefinition",
+            "src": "307:45:4"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "RetailerRemoved"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "account",
+                      "scope": 374,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 371,
+                        "name": "ElementaryTypeName",
+                        "src": "377:7:4"
+                      }
+                    ],
+                    "id": 372,
+                    "name": "VariableDeclaration",
+                    "src": "377:23:4"
+                  }
+                ],
+                "id": 373,
+                "name": "ParameterList",
+                "src": "376:25:4"
+              }
+            ],
+            "id": 374,
+            "name": "EventDefinition",
+            "src": "355:47:4"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "retailers",
+              "scope": 464,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct Roles.Role",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Roles.Role",
+                  "referencedDeclaration": 471,
+                  "type": "struct Roles.Role"
+                },
+                "id": 375,
+                "name": "UserDefinedTypeName",
+                "src": "486:10:4"
+              }
+            ],
+            "id": 376,
+            "name": "VariableDeclaration",
+            "src": "486:28:4"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 464,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 377,
+                "name": "ParameterList",
+                "src": "614:2:4"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 378,
+                "name": "ParameterList",
+                "src": "624:0:4"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 447,
+                              "type": "function (address)",
+                              "value": "_addRetailer"
+                            },
+                            "id": 379,
+                            "name": "Identifier",
+                            "src": "630:12:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1583,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 380,
+                                "name": "Identifier",
+                                "src": "643:3:4"
+                              }
+                            ],
+                            "id": 381,
+                            "name": "MemberAccess",
+                            "src": "643:10:4"
+                          }
+                        ],
+                        "id": 382,
+                        "name": "FunctionCall",
+                        "src": "630:24:4"
+                      }
+                    ],
+                    "id": 383,
+                    "name": "ExpressionStatement",
+                    "src": "630:24:4"
+                  }
+                ],
+                "id": 384,
+                "name": "Block",
+                "src": "624:35:4"
+              }
+            ],
+            "id": 385,
+            "name": "FunctionDefinition",
+            "src": "603:56:4"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "name": "onlyRetailer",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 386,
+                "name": "ParameterList",
+                "src": "765:2:4"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_61da31c1e3b4b07c2c8b368d5e3e7e8f854294f16474a71669f79bb5ecdf2ce4",
+                                  "typeString": "literal_string \"You must be a retailer to do this.\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                1586,
+                                1587
+                              ],
+                              "referencedDeclaration": 1587,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 387,
+                            "name": "Identifier",
+                            "src": "774:7:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "bool",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address_payable",
+                                      "typeString": "address payable"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 410,
+                                  "type": "function (address) view returns (bool)",
+                                  "value": "isRetailer"
+                                },
+                                "id": 388,
+                                "name": "Identifier",
+                                "src": "782:10:4"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "sender",
+                                  "referencedDeclaration": null,
+                                  "type": "address payable"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1583,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 389,
+                                    "name": "Identifier",
+                                    "src": "793:3:4"
+                                  }
+                                ],
+                                "id": 390,
+                                "name": "MemberAccess",
+                                "src": "793:10:4"
+                              }
+                            ],
+                            "id": 391,
+                            "name": "FunctionCall",
+                            "src": "782:22:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "596f75206d75737420626520612072657461696c657220746f20646f20746869732e",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"You must be a retailer to do this.\"",
+                              "value": "You must be a retailer to do this."
+                            },
+                            "id": 392,
+                            "name": "Literal",
+                            "src": "806:36:4"
+                          }
+                        ],
+                        "id": 393,
+                        "name": "FunctionCall",
+                        "src": "774:69:4"
+                      }
+                    ],
+                    "id": 394,
+                    "name": "ExpressionStatement",
+                    "src": "774:69:4"
+                  },
+                  {
+                    "id": 395,
+                    "name": "PlaceholderStatement",
+                    "src": "849:1:4"
+                  }
+                ],
+                "id": 396,
+                "name": "Block",
+                "src": "768:87:4"
+              }
+            ],
+            "id": 397,
+            "name": "ModifierDefinition",
+            "src": "744:111:4"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "isRetailer",
+              "scope": 464,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "scope": 410,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 398,
+                        "name": "ElementaryTypeName",
+                        "src": "934:7:4"
+                      }
+                    ],
+                    "id": 399,
+                    "name": "VariableDeclaration",
+                    "src": "934:15:4"
+                  }
+                ],
+                "id": 400,
+                "name": "ParameterList",
+                "src": "933:17:4"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 410,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 401,
+                        "name": "ElementaryTypeName",
+                        "src": "972:4:4"
+                      }
+                    ],
+                    "id": 402,
+                    "name": "VariableDeclaration",
+                    "src": "972:4:4"
+                  }
+                ],
+                "id": 403,
+                "name": "ParameterList",
+                "src": "971:6:4"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 403
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "bool",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "has",
+                              "referencedDeclaration": 557,
+                              "type": "function (struct Roles.Role storage pointer,address) view returns (bool)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 376,
+                                  "type": "struct Roles.Role storage ref",
+                                  "value": "retailers"
+                                },
+                                "id": 404,
+                                "name": "Identifier",
+                                "src": "991:9:4"
+                              }
+                            ],
+                            "id": 405,
+                            "name": "MemberAccess",
+                            "src": "991:13:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 399,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 406,
+                            "name": "Identifier",
+                            "src": "1005:7:4"
+                          }
+                        ],
+                        "id": 407,
+                        "name": "FunctionCall",
+                        "src": "991:22:4"
+                      }
+                    ],
+                    "id": 408,
+                    "name": "Return",
+                    "src": "984:29:4"
+                  }
+                ],
+                "id": 409,
+                "name": "Block",
+                "src": "978:40:4"
+              }
+            ],
+            "id": 410,
+            "name": "FunctionDefinition",
+            "src": "914:104:4"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "name": "addRetailer",
+              "scope": 464,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "scope": 422,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 411,
+                        "name": "ElementaryTypeName",
+                        "src": "1100:7:4"
+                      }
+                    ],
+                    "id": 412,
+                    "name": "VariableDeclaration",
+                    "src": "1100:15:4"
+                  }
+                ],
+                "id": 413,
+                "name": "ParameterList",
+                "src": "1099:17:4"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 416,
+                "name": "ParameterList",
+                "src": "1137:0:4"
+              },
+              {
+                "attributes": {
+                  "arguments": null
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 397,
+                      "type": "modifier ()",
+                      "value": "onlyRetailer"
+                    },
+                    "id": 414,
+                    "name": "Identifier",
+                    "src": "1124:12:4"
+                  }
+                ],
+                "id": 415,
+                "name": "ModifierInvocation",
+                "src": "1124:12:4"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 447,
+                              "type": "function (address)",
+                              "value": "_addRetailer"
+                            },
+                            "id": 417,
+                            "name": "Identifier",
+                            "src": "1143:12:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 412,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 418,
+                            "name": "Identifier",
+                            "src": "1156:7:4"
+                          }
+                        ],
+                        "id": 419,
+                        "name": "FunctionCall",
+                        "src": "1143:21:4"
+                      }
+                    ],
+                    "id": 420,
+                    "name": "ExpressionStatement",
+                    "src": "1143:21:4"
+                  }
+                ],
+                "id": 421,
+                "name": "Block",
+                "src": "1137:32:4"
+              }
+            ],
+            "id": 422,
+            "name": "FunctionDefinition",
+            "src": "1079:90:4"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "renounceRetailer",
+              "scope": 464,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 423,
+                "name": "ParameterList",
+                "src": "1262:2:4"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 424,
+                "name": "ParameterList",
+                "src": "1272:0:4"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 463,
+                              "type": "function (address)",
+                              "value": "_removeRetailer"
+                            },
+                            "id": 425,
+                            "name": "Identifier",
+                            "src": "1278:15:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1583,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 426,
+                                "name": "Identifier",
+                                "src": "1294:3:4"
+                              }
+                            ],
+                            "id": 427,
+                            "name": "MemberAccess",
+                            "src": "1294:10:4"
+                          }
+                        ],
+                        "id": 428,
+                        "name": "FunctionCall",
+                        "src": "1278:27:4"
+                      }
+                    ],
+                    "id": 429,
+                    "name": "ExpressionStatement",
+                    "src": "1278:27:4"
+                  }
+                ],
+                "id": 430,
+                "name": "Block",
+                "src": "1272:38:4"
+              }
+            ],
+            "id": 431,
+            "name": "FunctionDefinition",
+            "src": "1237:73:4"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "_addRetailer",
+              "scope": 464,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "scope": 447,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 432,
+                        "name": "ElementaryTypeName",
+                        "src": "1426:7:4"
+                      }
+                    ],
+                    "id": 433,
+                    "name": "VariableDeclaration",
+                    "src": "1426:15:4"
+                  }
+                ],
+                "id": 434,
+                "name": "ParameterList",
+                "src": "1425:17:4"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 435,
+                "name": "ParameterList",
+                "src": "1452:0:4"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "add",
+                              "referencedDeclaration": 503,
+                              "type": "function (struct Roles.Role storage pointer,address)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 376,
+                                  "type": "struct Roles.Role storage ref",
+                                  "value": "retailers"
+                                },
+                                "id": 436,
+                                "name": "Identifier",
+                                "src": "1458:9:4"
+                              }
+                            ],
+                            "id": 438,
+                            "name": "MemberAccess",
+                            "src": "1458:13:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 433,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 439,
+                            "name": "Identifier",
+                            "src": "1472:7:4"
+                          }
+                        ],
+                        "id": 440,
+                        "name": "FunctionCall",
+                        "src": "1458:22:4"
+                      }
+                    ],
+                    "id": 441,
+                    "name": "ExpressionStatement",
+                    "src": "1458:22:4"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 370,
+                              "type": "function (address)",
+                              "value": "RetailerAdded"
+                            },
+                            "id": 442,
+                            "name": "Identifier",
+                            "src": "1491:13:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 433,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 443,
+                            "name": "Identifier",
+                            "src": "1505:7:4"
+                          }
+                        ],
+                        "id": 444,
+                        "name": "FunctionCall",
+                        "src": "1491:22:4"
+                      }
+                    ],
+                    "id": 445,
+                    "name": "EmitStatement",
+                    "src": "1486:27:4"
+                  }
+                ],
+                "id": 446,
+                "name": "Block",
+                "src": "1452:66:4"
+              }
+            ],
+            "id": 447,
+            "name": "FunctionDefinition",
+            "src": "1404:114:4"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "_removeRetailer",
+              "scope": 464,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "account",
+                      "scope": 463,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 448,
+                        "name": "ElementaryTypeName",
+                        "src": "1646:7:4"
+                      }
+                    ],
+                    "id": 449,
+                    "name": "VariableDeclaration",
+                    "src": "1646:15:4"
+                  }
+                ],
+                "id": 450,
+                "name": "ParameterList",
+                "src": "1645:17:4"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 451,
+                "name": "ParameterList",
+                "src": "1672:0:4"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "remove",
+                              "referencedDeclaration": 534,
+                              "type": "function (struct Roles.Role storage pointer,address)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 376,
+                                  "type": "struct Roles.Role storage ref",
+                                  "value": "retailers"
+                                },
+                                "id": 452,
+                                "name": "Identifier",
+                                "src": "1678:9:4"
+                              }
+                            ],
+                            "id": 454,
+                            "name": "MemberAccess",
+                            "src": "1678:16:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 449,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 455,
+                            "name": "Identifier",
+                            "src": "1695:7:4"
+                          }
+                        ],
+                        "id": 456,
+                        "name": "FunctionCall",
+                        "src": "1678:25:4"
+                      }
+                    ],
+                    "id": 457,
+                    "name": "ExpressionStatement",
+                    "src": "1678:25:4"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 374,
+                              "type": "function (address)",
+                              "value": "RetailerRemoved"
+                            },
+                            "id": 458,
+                            "name": "Identifier",
+                            "src": "1714:15:4"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 449,
+                              "type": "address",
+                              "value": "account"
+                            },
+                            "id": 459,
+                            "name": "Identifier",
+                            "src": "1730:7:4"
+                          }
+                        ],
+                        "id": 460,
+                        "name": "FunctionCall",
+                        "src": "1714:24:4"
+                      }
+                    ],
+                    "id": 461,
+                    "name": "EmitStatement",
+                    "src": "1709:29:4"
+                  }
+                ],
+                "id": 462,
+                "name": "Block",
+                "src": "1672:71:4"
+              }
+            ],
+            "id": 463,
+            "name": "FunctionDefinition",
+            "src": "1621:122:4"
+          }
+        ],
+        "id": 464,
+        "name": "ContractDefinition",
+        "src": "190:1555:4"
+      }
+    ],
+    "id": 465,
+    "name": "SourceUnit",
+    "src": "33:1712:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-02-10T08:34:19.487Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
